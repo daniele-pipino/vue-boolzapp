@@ -1,6 +1,7 @@
 /* utilities */
 body{
     background-color:rgb(30, 75, 30);
+    overflow-y: none;
 }
 
 .bg-sky{
@@ -36,4 +37,8 @@ body{
     color: rgb(109, 209, 226);;
 }
 
+.bottom-section{
+    height: calc(100vh - 300px);
+    overflow-y: auto;
+}
 
