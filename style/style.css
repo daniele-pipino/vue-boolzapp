@@ -2,6 +2,10 @@
 body{
     background-color:rgb(30, 75, 30);
 }
+
+.bg-sky{
+    background-color: rgb(109, 209, 226);
+}
 /* left column */
 .square{
     height: 80px; 
@@ -16,3 +20,21 @@ body{
     border-radius: 50%;
     vertical-align: middle;
 }
+
+.notification-circle{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: relative;
+}
+
+.notification-circle i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(109, 209, 226);;
+}
+
+
