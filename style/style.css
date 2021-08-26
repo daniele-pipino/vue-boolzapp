@@ -38,7 +38,19 @@ body{
 }
 
 .bottom-section{
-    height: calc(100vh - 300px);
+    height: calc(800px - 300px);
     overflow-y: auto;
+}
+
+.chat{
+    height: calc(800px - 220px);
+    overflow-y: auto;
+    background-image: url(../img/mine.jpg);
+    background-size: contain;
+}
+
+.message{
+    height: 80px;
+    background-color: rgb(228, 220, 220);  
 }
 
