@@ -18,7 +18,6 @@ body{
 .user-img{
     width: 50px;
     border-radius: 50%;
-    vertical-align: middle;
 }
 
 .notification-circle{
