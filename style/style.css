@@ -7,7 +7,7 @@ body{
 .bg-sky{
     background-color: rgb(109, 209, 226);
 }
-/* left column */
+
 .square{
     height: 80px; 
 }
@@ -20,6 +20,7 @@ body{
     width: 50px;
     border-radius: 50%;
 }
+/* left column */
 
 .notification-circle{
     width: 60px;
@@ -36,20 +37,37 @@ body{
     transform: translate(-50%, -50%);
     color: rgb(109, 209, 226);;
 }
-
+/* bottom left section */
 .bottom-section{
     height: calc(800px - 300px);
     overflow-y: auto;
 }
-
+/* chat section */
 .chat{
     height: calc(800px - 220px);
     overflow-y: auto;
     background-image: url(../img/mine.jpg);
     background-size: contain;
 }
-
+/* messages */
 .message{
+    margin: 20px 0;
+    width: 150px;
+    min-height: 50px;
+    border-radius: 15px;
+}
+
+ .message-send{
+    background-color: green;
+    margin-left: 460px;
+}
+
+ .message-received{
+    background-color: rgb(124, 16, 16);
+    margin-left: 20px;
+}
+
+.write-message{
     height: 80px;
     background-color: rgb(228, 220, 220);  
 }
