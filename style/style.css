@@ -5,11 +5,18 @@ body{
 }
 
 .bg-sky{
+    height: 80px;
     background-color: rgb(109, 209, 226);
 }
 
 .square{
     height: 80px; 
+    background-color: #fff;
+}
+
+.square:hover{
+    background-color: rgb(184, 182, 182);
+    cursor: pointer;
 }
 .user-square{
     height: 60px;

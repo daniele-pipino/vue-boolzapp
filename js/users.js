@@ -19,4 +19,24 @@ const contacts = [
     name: 'Luisa',
     avatar: '_4',
   },
+  {
+    name: 'Gino',
+    avatar: '_5',
+  },
+  {
+    name: 'Azzurra',
+    avatar: '_6',
+  },
+  {
+    name: 'Simone',
+    avatar: '_7',
+  },
+  {
+    name: 'Francesca',
+    avatar: '_8',
+  },
+  {
+    name: 'Massimo',
+    avatar: '_io',
+  }
 ];
