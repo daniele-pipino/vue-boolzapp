@@ -1,0 +1,18 @@
+/* utilities */
+body{
+    background-color:rgb(30, 75, 30);
+}
+/* left column */
+.square{
+    height: 80px; 
+}
+.user-square{
+    height: 60px;
+    background-color: rgb(212, 212, 212);  
+} 
+
+.user-img{
+    width: 50px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
