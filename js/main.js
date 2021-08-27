@@ -5,6 +5,9 @@ Vue.config.devtools = true;
 const app = new Vue({
     el: '#app',
     data: {
+        currentChat: 0,
+        currentContact: '',
+        currentImg: '_1',
         user: {
             name: 'Nome Utente',
             avatar: '_io',
@@ -94,7 +97,12 @@ const app = new Vue({
                 ],
             },
         ],
-
     },
-    methods: {},
+    methods: {
+        changeChat(index) {
+            this.currentContact = this.contacts[index].name;
+            this.currentImg = this.contacts[index].avatar;
+            this.currentChat = index;
+        }
+    },
 });

@@ -66,7 +66,8 @@
                     <!-- bottom section -->
                     <section class="bottom-section bg-light">
                         <!-- utent square -->
-                        <div v-for="contact in contacts" class="square d-flex align-items-center">
+                        <div v-for="(contact,index) in contacts" class="square d-flex align-items-center"
+                            @click="changeChat(index)">
                             <div class="left-part d-flex align-items-center px-1">
                                 <img :src=" 'img/avatar' + contact.avatar + '.jpg' " alt="avatar" class="user-img">
                                 <p class="pt-3 px-3">{{contact.name}}</p>
@@ -80,10 +81,10 @@
                     <section class="contact-info">
                         <div class="user-square d-flex justify-content-between align-items-center">
                             <div class="left-part d-flex align-items-center px-1">
-                                <img src="./img/avatar_8.jpg" alt="" class="user-img">
+                                <img :src=" `img/avatar${currentImg}.jpg` " alt="" class="user-img">
                                 <div class="icon px-2">
-                                    <p class="mb-0 pt-3 fw-normal">Nome Utente</p>
-                                    <p class="fs-6 fw-lighter">Ultimo accesso oggi alle </p>
+                                    <p class="mb-0 pt-3 fw-normal">{{currentContact}}</p>
+                                    <p class="fs-6 fw-lighter">Ultimo accesso oggi alle</p>
                                 </div>
                             </div>
                             <div class="right-part px-3">
@@ -95,11 +96,11 @@
                     </section>
                     <!-- chat  -->
                     <section class="chat flex-grow-1 overflow-auto">
-                        <div v-for="message in contacts[2].messages"
-                            :class="'message-container p-3 d-flex' + ' ' + message.status ">
+                        <div v-for="message in contacts[currentChat].messages"
+                            class="message-container p-3 d-flex message.status" :class="message.status">
                             <div class="message p-2 rounded-3">
                                 <p class="mb-0">{{message.message}}</p>
-                                <time class="fw-light text-right" datetime="2021-08-03T10:07">10/01/2020 - 10:07</time>
+                                <time class="fw-light text-right" datetime="message.date">{{message.date}}</time>
                             </div>
                         </div>
                     </section>
