@@ -95,15 +95,10 @@
                     </section>
                     <!-- chat  -->
                     <section class="chat flex-grow-1 overflow-auto">
-                        <div class="message-container p-5 d-flex sent">
+                        <div v-for="message in contacts[2].messages"
+                            :class="'message-container p-3 d-flex' + ' ' + message.status ">
                             <div class="message p-2 rounded-3">
-                                <p class="mb-0">Hai fatto la spesa?</p>
-                                <time class="fw-light text-right" datetime="2021-08-03T10:07">10/01/2020 - 10:07</time>
-                            </div>
-                        </div>
-                        <div class="message-container p-5 d-flex received">
-                            <div class="message p-2 rounded-3 ">
-                                <p class="mb-0">si</p>
+                                <p class="mb-0">{{message.message}}</p>
                                 <time class="fw-light text-right" datetime="2021-08-03T10:07">10/01/2020 - 10:07</time>
                             </div>
                         </div>
