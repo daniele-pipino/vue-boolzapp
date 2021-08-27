@@ -6,16 +6,17 @@ const app = new Vue({
     el: '#app',
     data: {
         currentChat: 0,
-        currentContact: '',
-        currentImg: '_1',
+        currentContact: 'Michele',
+        currentImg: '_5',
+        newMessage: '',
         user: {
             name: 'Nome Utente',
-            avatar: '_io',
+            avatar: '_1',
         },
         contacts: [
             {
                 name: 'Michele',
-                avatar: '_1',
+                avatar: '_5',
                 visible: true,
                 messages: [
                     {
@@ -81,7 +82,7 @@ const app = new Vue({
             },
             {
                 name: 'Luisa',
-                avatar: '_4',
+                avatar: '_io',
                 visible: true,
                 messages: [
                     {
