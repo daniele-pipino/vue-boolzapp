@@ -29,15 +29,15 @@
     <div class="container" id="app">
         <div class="row">
             <!-- square -->
-            <div class="col-10 offset-1 h-100 my-5 d-flex">
+            <div class="col-11 mx-auto h-100 my-5 d-flex">
                 <!-- left column -->
-                <div class="col-5">
+                <div class="col-4">
                     <section class="top-section">
                         <!-- first user -->
                         <div class="user-square d-flex justify-content-between align-items-center border">
                             <div class="left-part d-flex align-items-center px-1">
-                                <img src="./img/avatar_1.jpg" alt="" class="user-img">
-                                <p class="pt-3 px-1">Nome Utente</p>
+                                <img :src=" 'img/avatar' + user.avatar + '.jpg' " alt="" class="user-img">
+                                <p class="pt-3 px-1">{{user.name}}</p>
                             </div>
                             <div class="right-part px-3">
                                 <i class="fas fa-circle-notch fa-1x px-1"></i>
@@ -52,7 +52,9 @@
                             </div>
                             <div class="notification-info px-3">
                                 <p class="mb-0 fw-normal">Ricevi notifiche di nuovi messaggi</p>
-                                <p class="mb-0 fs-6 fw-light text-decoration-underline">Attiva notifiche desktop</p>
+                                <p class="cursor-pointer mb-0 fs-6 fw-light text-decoration-underline">Attiva notifiche
+                                    desktop
+                                </p>
                             </div>
                         </div>
                         <!-- search-bar -->
@@ -66,14 +68,14 @@
                         <!-- utent square -->
                         <div v-for="contact in contacts" class="square d-flex align-items-center">
                             <div class="left-part d-flex align-items-center px-1">
-                                <img src="./img/avatar_1.jpg" alt="avatar" class="user-img">
+                                <img :src=" 'img/avatar' + contact.avatar + '.jpg' " alt="avatar" class="user-img">
                                 <p class="pt-3 px-3">{{contact.name}}</p>
                             </div>
                         </div>
                     </section>
                 </div>
                 <!-- right column -->
-                <div class="col-7">
+                <div class="col-8">
                     <!-- info contact -->
                     <section class="contact-info">
                         <div class="user-square d-flex justify-content-between align-items-center">
@@ -92,39 +94,19 @@
                         </div>
                     </section>
                     <!-- chat  -->
-                    <section class="chat">
-                        <div class="message message-send"></div>
-                        <div class="message message-received"></div>
-                        <div class="message message-send"></div>
-                        <div class="message message-received"></div>
-                        <div class="message message-received"></div>
-                        <div class="message message-received"></div>
-                        <div class="message message-send"></div>
-                        <div class="message message-send"></div>
-                        <div class="message message-send"></div>
-                        <div class="message message-received"></div>
-                        <div class="message message-send"></div>
-                        <div class="message message-received"></div>
-                        <div class="message message-received"></div>
-                        <div class="message message-received"></div>
-                        <div class="message message-send"></div>
-                        <div class="message message-send"></div>
-                        <div class="message message-send"></div>
-                        <div class="message message-received"></div>
-                        <div class="message message-send"></div>
-                        <div class="message message-received"></div>
-                        <div class="message message-received"></div>
-                        <div class="message message-received"></div>
-                        <div class="message message-send"></div>
-                        <div class="message message-send"></div>
-                        <div class="message message-send"></div>
-                        <div class="message message-received"></div>
-                        <div class="message message-send"></div>
-                        <div class="message message-received"></div>
-                        <div class="message message-received"></div>
-                        <div class="message message-received"></div>
-                        <div class="message message-send"></div>
-                        <div class="message message-send"></div>
+                    <section class="chat flex-grow-1 overflow-auto">
+                        <div class="message-container p-5 d-flex sent">
+                            <div class="message p-2 rounded-3">
+                                <p class="mb-0">Hai fatto la spesa?</p>
+                                <time class="fw-light text-right" datetime="2021-08-03T10:07">10/01/2020 - 10:07</time>
+                            </div>
+                        </div>
+                        <div class="message-container p-5 d-flex received">
+                            <div class="message p-2 rounded-3 ">
+                                <p class="mb-0">si</p>
+                                <time class="fw-light text-right" datetime="2021-08-03T10:07">10/01/2020 - 10:07</time>
+                            </div>
+                        </div>
                     </section>
                     <!-- write message -->
                     <section class="write-message d-flex justify-content-between align-items-center">

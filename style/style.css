@@ -1,7 +1,16 @@
 /* utilities */
 body{
-    background-color:rgb(30, 75, 30);
-    overflow-y: none;
+    height: 100vh;
+   background-image: linear-gradient(
+       to bottom,
+       #00bfa5 15%,
+       #f0f0f0 15%,
+       #f0f0f0 100%
+   );
+}
+
+.cursor-pointer{
+cursor: pointer;
 }
 
 .bg-sky{
@@ -13,6 +22,7 @@ body{
     height: 80px; 
     background-color: #fff;
 }
+/* hover classes */
 
 .square:hover{
     background-color: rgb(184, 182, 182);
@@ -27,11 +37,12 @@ body{
     width: 50px;
     border-radius: 50%;
 }
+
 /* left column */
 
 .notification-circle{
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     background-color: #fff;
     position: relative;
@@ -52,28 +63,34 @@ body{
 /* chat section */
 .chat{
     height: calc(800px - 220px);
-    overflow-y: auto;
+    overflow: auto;
     background-image: url(../img/mine.jpg);
     background-size: contain;
 }
 /* messages */
-.message{
-    margin: 20px 0;
-    width: 150px;
-    min-height: 50px;
-    border-radius: 15px;
+
+ .message-container.sent{
+    justify-content: flex-end;
 }
 
- .message-send{
-    background-color: green;
-    margin-left: 460px;
-}
+.message-container.sent .message {
+    background-color: #d5f9ba;
+  }
+  
+  .message-container.received .message {
+    background-color: #fff;
+  }
 
- .message-received{
-    background-color: rgb(124, 16, 16);
-    margin-left: 20px;
+ .message-container.received{
+    justify-content: flex-start;
 }
+.message-container .message time {
+    display: block;
+    font-size: 10px;
+    color: #aaa;
+  }
 
+/* send message */
 .write-message{
     height: 80px;
     background-color: rgb(228, 220, 220);  
