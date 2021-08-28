@@ -133,6 +133,8 @@ const app = new Vue({
             }
 
             this.contacts[this.currentChat].messages.push(cpuMessage);
-        }
+        },
+        // funzione per recuperare data e ora
+
     },
 });
