@@ -1,3 +1,5 @@
+// configurazione plugin dayjs
+dayjs.extend(dayjs_plugin_customParseFormat);
 
 // configurazione vue js
 Vue.config.devtools = true;
@@ -112,7 +114,7 @@ const app = new Vue({
             const userMessage = {
                 message: this.newMessage,
                 status: 'sent',
-                date: dayjs(),
+                date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
             }
 
             if (userMessage.message.length > 0) {
@@ -121,7 +123,7 @@ const app = new Vue({
             }
 
             // risposta dopo un secondo
-            setTimeout(this.receiveMessage, 1000);
+            setTimeout(this.receiveMessage, 2000);
         },
         // function to receive message from cpu
         receiveMessage() {
@@ -131,7 +133,7 @@ const app = new Vue({
             const cpuMessage = {
                 message: 'ok',
                 status: 'received',
-                date: dayjs(),
+                date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
             }
 
             this.contacts[this.currentChat].messages.push(cpuMessage);
