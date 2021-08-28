@@ -118,6 +118,21 @@ const app = new Vue({
                 this.contacts[index].messages.push(userMessage);
                 this.newMessage = '';
             }
+
+            // risposta dopo un secondo
+            setTimeout(this.receiveMessage, 1000);
+        },
+        // function to receive message from cpu
+        receiveMessage() {
+
+            index = this.currentChat;
+
+            const cpuMessage = {
+                message: 'ok',
+                status: 'received',
+            }
+
+            this.contacts[this.currentChat].messages.push(cpuMessage);
         }
     },
 });
