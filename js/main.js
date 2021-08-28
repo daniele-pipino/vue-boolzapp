@@ -117,13 +117,12 @@ const app = new Vue({
                 date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
             }
 
-            if (userMessage.message.length > 0) {
+            if (userMessage.message.length.trim() > 0) {
                 this.contacts[index].messages.push(userMessage);
                 this.newMessage = '';
             }
-
             // risposta dopo un secondo
-            setTimeout(this.receiveMessage, 2000);
+            setTimeout(this.receiveMessage, 3000);
         },
         // function to receive message from cpu
         receiveMessage() {
@@ -131,14 +130,12 @@ const app = new Vue({
             index = this.currentChat;
 
             const cpuMessage = {
-                message: 'ok',
+                message: 'Ti amo anche io',
                 status: 'received',
                 date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
             }
 
             this.contacts[this.currentChat].messages.push(cpuMessage);
         },
-        // funzione per recuperare data e ora
-
     },
 });
