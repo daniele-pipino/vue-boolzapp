@@ -112,6 +112,7 @@ const app = new Vue({
             const userMessage = {
                 message: this.newMessage,
                 status: 'sent',
+                date: dayjs(),
             }
 
             if (userMessage.message.length > 0) {
@@ -130,6 +131,7 @@ const app = new Vue({
             const cpuMessage = {
                 message: 'ok',
                 status: 'received',
+                date: dayjs(),
             }
 
             this.contacts[this.currentChat].messages.push(cpuMessage);
