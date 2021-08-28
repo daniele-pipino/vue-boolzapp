@@ -9,6 +9,7 @@ const app = new Vue({
         currentContact: 'Michele',
         currentImg: '_5',
         newMessage: '',
+        searchedContact: '',
         user: {
             name: 'Nome Utente',
             avatar: '_1',
@@ -81,7 +82,7 @@ const app = new Vue({
                 ],
             },
             {
-                name: 'Luisa',
+                name: 'Azzurra',
                 avatar: '_io',
                 visible: true,
                 messages: [
@@ -104,6 +105,19 @@ const app = new Vue({
             this.currentContact = this.contacts[index].name;
             this.currentImg = this.contacts[index].avatar;
             this.currentChat = index;
+        },
+        // function to send a message
+        sendMessage(index) {
+            index = this.currentChat;
+            const userMessage = {
+                message: this.newMessage,
+                status: 'sent',
+            }
+
+            if (userMessage.message.length > 0) {
+                this.contacts[index].messages.push(userMessage);
+                this.newMessage = '';
+            }
         }
     },
 });

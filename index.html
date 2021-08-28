@@ -59,8 +59,8 @@
                         </div>
                         <!-- search-bar -->
                         <div class="searchbar square bg-light p-2 d-flex align-items-center border">
-                            <input type="search" placeholder="Cerca o inizia una nuova chat" aria-label="Search"
-                                class="form-control text-center">
+                            <input v-model="searchedContact" type="search" placeholder="Cerca o inizia una nuova chat"
+                                aria-label="Search" class="form-control text-center">
                         </div>
                     </section>
                     <!-- bottom section -->
@@ -109,12 +109,14 @@
                         <div class="emoji px-3">
                             <i class="cursor-pointer far fa-laugh fa-2x"></i>
                         </div>
+                        <!-- text input -->
                         <div class="text-message w-100">
-                            <input type="text" class="form-control " placeholder="Inserisci il tuo messaggio"
-                                aria-label="Username" aria-describedby="basic-addon1">
+                            <input @keyup.enter="sendMessage" v-model="newMessage" type="text" class="form-control "
+                                placeholder="Scrivi il tuo messaggio" aria-label="Username"
+                                aria-describedby="basic-addon1">
                         </div>
                         <div class="send px-3">
-                            <i class="cursor-pointer fas fa-microphone fa-2x"></i>
+                            <i @click="sendMessage" class="cursor-pointer fas fa-microphone fa-2x"></i>
                         </div>
                     </section>
                 </div>
