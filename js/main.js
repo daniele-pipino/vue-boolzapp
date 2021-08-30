@@ -12,6 +12,7 @@ const app = new Vue({
         currentImg: '_5',
         newMessage: '',
         searchedContact: '',
+        lastMessage: '',
         user: {
             name: 'Nome Utente',
             avatar: '_1',
@@ -107,6 +108,7 @@ const app = new Vue({
             this.currentContact = this.contacts[index].name;
             this.currentImg = this.contacts[index].avatar;
             this.currentChat = index;
+            this.getLastMessage();
         },
         // function to send a message
         sendMessage() {

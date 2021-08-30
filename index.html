@@ -73,7 +73,16 @@
                             class="square d-flex align-items-center" @click="changeChat(index)">
                             <div class="left-part d-flex align-items-center px-1">
                                 <img :src=" 'img/avatar' + contact.avatar + '.jpg' " alt="avatar" class="user-img">
-                                <p class="pt-3 px-3">{{contact.name}}</p>
+                                <div class="contact-text">
+                                    <p class="pt-2 px-3 mb-0 fw-bolder">{{contact.name}}</p>
+
+                                    <p class="m-0 fw-light px-3">{{contact.messages[contact.messages.length -
+                                        1].message}}
+                                    </p>
+                                    <p class="m-0 fw-lighter px-3">{{contact.messages[contact.messages.length -
+                                        1].date}}
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -87,7 +96,8 @@
                                 <img :src=" `img/avatar${currentImg}.jpg` " alt="" class="user-img">
                                 <div class="icon px-2">
                                     <p class="mb-0 pt-3 fw-normal">{{currentContact}}</p>
-                                    <p class="fs-6 fw-lighter">Ultimo accesso oggi alle</p>
+                                    <p class="fs-6 fw-lighter">Ultimo accesso oggi
+                                        alle</p>
                                 </div>
                             </div>
                             <div class="right-part px-3">
