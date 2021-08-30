@@ -109,19 +109,22 @@ const app = new Vue({
             this.currentChat = index;
         },
         // function to send a message
-        sendMessage(index) {
-            index = this.currentChat;
+        sendMessage() {
+
             const userMessage = {
                 message: this.newMessage,
                 status: 'sent',
                 date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
             }
 
-            if (userMessage.message.length.trim() > 0) {
-                this.contacts[index].messages.push(userMessage);
+            if (!this.newMessage) {
+                return;
+            } else {
+                this.contacts[this.currentChat].messages.push(userMessage);
                 this.newMessage = '';
             }
-            // risposta dopo un secondo
+
+            // risposta cpu dopo un secondo
             setTimeout(this.receiveMessage, 3000);
         },
         // function to receive message from cpu
@@ -130,7 +133,7 @@ const app = new Vue({
             index = this.currentChat;
 
             const cpuMessage = {
-                message: 'Ti amo anche io',
+                message: 'Ciao',
                 status: 'received',
                 date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
             }

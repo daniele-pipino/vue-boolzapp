@@ -114,8 +114,8 @@
                         </div>
                         <!-- text input -->
                         <div class="text-message w-100">
-                            <input @keyup.enter="sendMessage" v-model="newMessage" type="text" class="form-control "
-                                placeholder="Scrivi il tuo messaggio" aria-label="Username"
+                            <input @keyup.enter="sendMessage" v-model.trim="newMessage" type="text"
+                                class="form-control " placeholder="Scrivi il tuo messaggio" aria-label="Username"
                                 aria-describedby="basic-addon1">
                         </div>
                         <div class="send px-3">
