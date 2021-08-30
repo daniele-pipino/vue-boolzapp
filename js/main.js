@@ -124,6 +124,9 @@ const app = new Vue({
                 this.newMessage = '';
             }
 
+            // scroll automatico
+            this.scrollToEnd();
+
             // risposta cpu dopo un secondo
             setTimeout(this.receiveMessage, 3000);
         },
@@ -139,6 +142,21 @@ const app = new Vue({
             }
 
             this.contacts[this.currentChat].messages.push(cpuMessage);
+        },
+        showContact(contact) {
+            if (this.searchedContact.trim() === '') {
+                return true;
+            }
+            // lower word to confront them in the correct way
+            const filter = this.searchedContact.trim().toLowerCase();
+            contact = contact.name.toLowerCase();
+
+            return contact.includes(filter);
+
+        },
+        scrollToEnd() {
+            var container = this.$el.querySelector("#container");
+            container.scrollTop = container.scrollHeight;
         },
     },
 });

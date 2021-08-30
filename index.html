@@ -69,8 +69,8 @@
                     <!-- bottom section -->
                     <section class="bottom-section bg-light">
                         <!-- utent square -->
-                        <div v-for="(contact,index) in contacts" class="square d-flex align-items-center"
-                            @click="changeChat(index)">
+                        <div v-if="showContact(contact)" v-for="(contact,index) in contacts"
+                            class="square d-flex align-items-center" @click="changeChat(index)">
                             <div class="left-part d-flex align-items-center px-1">
                                 <img :src=" 'img/avatar' + contact.avatar + '.jpg' " alt="avatar" class="user-img">
                                 <p class="pt-3 px-3">{{contact.name}}</p>
@@ -98,7 +98,7 @@
                         </div>
                     </section>
                     <!-- chat  -->
-                    <section class="chat flex-grow-1 overflow-auto">
+                    <section class="chat flex-grow-1 overflow-auto" id="container">
                         <div v-for="message in contacts[currentChat].messages"
                             class="message-container p-3 d-flex message.status" :class="message.status">
                             <div class="message p-2 rounded-3">
