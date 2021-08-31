@@ -79,7 +79,7 @@
                                     <p class="m-0 fw-light px-3">{{contact.messages[contact.messages.length -
                                         1].message}}
                                     </p>
-                                    <p class="m-0 fw-lighter px-3">{{contact.messages[contact.messages.length -
+                                    <p class="p-0 fw-lighter px-3">{{contact.messages[contact.messages.length -
                                         1].date}}
                                     </p>
                                 </div>
@@ -109,9 +109,10 @@
                     </section>
                     <!-- chat  -->
                     <section class="chat flex-grow-1 overflow-auto" id="container">
-                        <div v-for="message in contacts[currentChat].messages"
+                        <div v-for="(message, index) in contacts[currentChat].messages"
                             class="message-container p-3 d-flex message.status" :class="message.status">
-                            <div class="message p-2 rounded-3">
+                            <div class="message p-3 rounded-3 position-relative">
+                                <i @click="deleteMessage(index)" class="fas fa-angle-down top-down cursor-pointer"></i>
                                 <p class="mb-0">{{message.message}}</p>
                                 <time class="fw-light text-right" datetime="message.date">{{message.date}}</time>
                             </div>

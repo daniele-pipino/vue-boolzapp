@@ -126,9 +126,6 @@ const app = new Vue({
                 this.newMessage = '';
             }
 
-            // scroll automatico
-            this.scrollToEnd();
-
             // risposta cpu dopo un secondo
             setTimeout(this.receiveMessage, 3000);
         },
@@ -138,7 +135,7 @@ const app = new Vue({
             index = this.currentChat;
 
             const cpuMessage = {
-                message: 'Ciao',
+                message: 'ok',
                 status: 'received',
                 date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
             }
@@ -146,6 +143,7 @@ const app = new Vue({
             this.contacts[this.currentChat].messages.push(cpuMessage);
         },
         showContact(contact) {
+
             if (this.searchedContact.trim() === '') {
                 return true;
             }
@@ -156,9 +154,8 @@ const app = new Vue({
             return contact.includes(filter);
 
         },
-        scrollToEnd() {
-            var container = this.$el.querySelector("#container");
-            container.scrollTop = container.scrollHeight;
-        },
+        deleteMessage(index) {
+            this.contacts[this.currentChat].messages.splice(index, 1);
+        }
     },
 });

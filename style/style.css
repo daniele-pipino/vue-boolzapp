@@ -19,7 +19,7 @@ cursor: pointer;
 }
 
 .square{
-    height: 80px; 
+    height: 100px; 
     background-color: #fff;
 }
 /* hover classes */
@@ -88,6 +88,12 @@ cursor: pointer;
     display: block;
     font-size: 10px;
     color: #aaa;
+  }
+
+  .message-container .top-down{
+      position: absolute;
+      right: 5px;
+      top: 5px;
   }
 
 /* send message */
