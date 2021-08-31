@@ -32,7 +32,7 @@
     <div class="container" id="app">
         <div class="row">
             <!-- square -->
-            <div class="col-11 mx-auto h-100 my-5 d-flex">
+            <div class="col-11 mx-auto  my-5 d-flex">
                 <!-- left column -->
                 <div class="col-4">
                     <section class="top-section">
@@ -111,9 +111,9 @@
                     <section class="chat flex-grow-1 overflow-auto" id="container">
                         <div v-for="(message, index) in contacts[currentChat].messages"
                             class="message-container p-3 d-flex message.status" :class="message.status">
-                            <div class="message p-3 rounded-3 position-relative">
-                                <i @click="deleteMessage(index)" class="fas fa-angle-down top-down cursor-pointer"></i>
-                                <p class="mb-0">{{message.message}}</p>
+                            <div class="message p-2 rounded-2 position-relative">
+                                <i @click="deleteMessage(index)" class="fas fa-trash top-down cursor-pointer"></i>
+                                <p class="mb-0 m-3">{{message.message}}</p>
                                 <time class="fw-light text-right" datetime="message.date">{{message.date}}</time>
                             </div>
                         </div>

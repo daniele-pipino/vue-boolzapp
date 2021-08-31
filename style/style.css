@@ -1,6 +1,6 @@
 /* utilities */
 body{
-    height: 100vh;
+height: 100vh;
    background-image: linear-gradient(
        to bottom,
        #00bfa5 15%,
@@ -94,6 +94,10 @@ cursor: pointer;
       position: absolute;
       right: 5px;
       top: 5px;
+  }
+
+  .message-container .top-down:hover{
+      color: rgb(184, 10, 10);
   }
 
 /* send message */
